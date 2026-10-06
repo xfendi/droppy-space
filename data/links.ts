@@ -18,7 +18,7 @@ export const NAVBAR_LINKS: NavBarLink[] = [
 ];
 
 export const FOOTER_LINKS: (NavBarLink & { external?: boolean })[] = [
-  { href: GITHUB_REPO_LINK, label: "GitHub", external: true },
+  { href: GITHUB_REPO_LINK, label: "Open source on GitHub", external: true },
 ];
 
 import { ButtonVariant } from "@/components/button";
