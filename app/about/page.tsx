@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { LINKS } from "@/data/links";
 import { CREATOR } from "@/data/site";
@@ -7,9 +7,11 @@ import LandingWrapper from "@/components/landing-wrapper";
 import Logo from "@/components/logo";
 import Section from "@/components/section";
 
-export const metadata: Metadata = {
-  title: "Droppy: About",
-};
+export const metadata = createPageMetadata(
+  "About",
+  "Learn about Droppy Space, a curated gallery of app icons and website favicons. Meet the creator and find out how to contribute or request an icon removal.",
+  "/about",
+);
 
 export default function AboutPage() {
   return (

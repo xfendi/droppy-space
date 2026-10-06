@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import { HugeiconsIcon } from "@hugeicons/react";
 
 import { Button, buttonVariants } from "@/components/button";
@@ -7,7 +7,11 @@ import Logo from "@/components/logo";
 import Section from "@/components/section";
 import { CONTACT_LINKS } from "@/data/links";
 
-export const metadata: Metadata = { title: "Droppy: Contact" };
+export const metadata = createPageMetadata(
+  "Contact",
+  "Get in touch with the creator of Droppy Space. Share feedback, suggest an app icon, report an issue, or request an icon update or removal.",
+  "/contact",
+);
 
 export default function ContactPage() {
   return (
