@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --color-brand: #7ec8f8;
+  --color-brand-dark: #2f8fd1;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), Arial, sans-serif;
+  --font-rounded:
+    var(--font-rounded-local), var(--font-inter), Arial, sans-serif;
+
+  --color-brand: var(--color-brand);
+  --color-brand-dark: var(--color-brand-dark);
+}
+
+body {
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pressable {
+  transition: all 100ms ease-out;
+}
+
+.pressable:active {
+  scale: 0.965;
+}
+
+@layer components {
+  .article-content {
+    @apply w-full space-y-6 rounded-3xl bg-neutral-100 p-6 text-left leading-relaxed text-neutral-600;
+  }
+
+  .article-content section {
+    @apply space-y-3;
+  }
+
+  .article-content h2 {
+    @apply font-rounded text-xl font-bold text-neutral-900;
+  }
+
+  .article-content a {
+    @apply font-semibold text-neutral-900 underline underline-offset-3;
+  }
+
+  .article-content a:hover {
+    @apply text-brand-dark;
+  }
+
+  .article-content strong {
+    @apply font-bold text-neutral-900;
+  }
+
+  .article-content ul {
+    @apply list-disc space-y-1 pl-5;
+  }
+
+  .article-content ol {
+    @apply list-decimal space-y-1 pl-5;
+  }
+}
