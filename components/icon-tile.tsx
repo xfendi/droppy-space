@@ -34,6 +34,7 @@ export default function IconTile({ app }: IconTileProps) {
               src={app.icon_url}
               alt={`${app.name}'s icon`}
               fill
+              loading="lazy"
               sizes="(max-width: 639px) 28vw, 128px"
               unoptimized={app.icon_url.endsWith(".ico")}
               className={cn(

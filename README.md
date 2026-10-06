@@ -17,7 +17,7 @@ Open [localhost:3000](http://localhost:3000). No environment variables or backen
 
 All app entries live in [`data/apps.ts`](data/apps.ts). Each entry has a unique `slug`, a `name`, a `kind` of `mobile` or `website`, an `icon_url`, and a destination `url`.
 
-The browser filters and searches the bundled catalog by name. Search and filter selections are shareable through `?q=...&filter=mobile` or `?filter=website`. The gallery shows 100 entries at a time, with a button to reveal more.
+The browser filters and searches the bundled catalog by name. Search and filter selections are shareable through `?q=...&filter=mobile` or `?filter=website`. All matching entries appear in the gallery, and remote icons load lazily as you scroll.
 
 ## Contributing
 

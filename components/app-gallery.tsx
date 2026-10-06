@@ -2,13 +2,11 @@
 
 import { Search01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { Button } from "@/components/button";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import IconTile from "@/components/icon-tile";
 import FilterBar from "@/components/filter-bar";
 import { Input } from "@/components/input";
 import { APPS } from "@/data/apps";
-import { APPS_PAGE_SIZE } from "@/data/gallery";
 
 const filters = [
   { label: "All icons", value: "all" },
@@ -32,14 +30,11 @@ export default function AppGallery() {
   const filter = selectedFilter === "mobile" || selectedFilter === "website"
     ? selectedFilter : "all";
   const term = search.trim().toLowerCase();
-  const [pagination, setPagination] = useState({ query, limit: APPS_PAGE_SIZE });
-  const limit = pagination.query === query ? pagination.limit : APPS_PAGE_SIZE;
   const inputRef = useRef<HTMLInputElement>(null);
-  const matches = APPS.filter((app) =>
+  const results = APPS.filter((app) =>
     (filter === "all" || app.kind === filter) &&
     app.name.toLowerCase().includes(term),
   );
-  const results = matches.slice(0, limit);
 
   function updateSearchParam(key: "q" | "filter", value: string) {
     const url = new URL(window.location.href);
@@ -49,7 +44,6 @@ export default function AppGallery() {
       url.searchParams.delete(key);
     }
     window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
-    setPagination({ query: url.search, limit: APPS_PAGE_SIZE });
     window.dispatchEvent(new PopStateEvent("popstate"));
   }
 
@@ -96,7 +90,7 @@ export default function AppGallery() {
         ) : (
           <>
             <p role="status" className="sr-only">
-              {matches.length} {matches.length === 1 ? "icon" : "icons"} found. Showing {results.length}.
+              {results.length} {results.length === 1 ? "icon" : "icons"} found.
             </p>
             <ul className="grid grid-cols-3 gap-x-5 gap-y-7 sm:grid-cols-5 sm:gap-x-8">
               {results.map((app) => <li key={app.slug}><IconTile app={app} /></li>)}
@@ -105,12 +99,6 @@ export default function AppGallery() {
         )}
       </div>
 
-      {results.length < matches.length && (
-        <Button variant="secondary" className="self-center"
-          onClick={() => setPagination({ query, limit: limit + APPS_PAGE_SIZE })}>
-          Load more icons
-        </Button>
-      )}
     </section>
   );
 }
