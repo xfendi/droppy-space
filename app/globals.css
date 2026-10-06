@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --color-brand: #7ec8f8;
   --color-brand-dark: #2f8fd1;
@@ -32,7 +34,7 @@ body {
 
 @layer components {
   .article-content {
-    @apply w-full space-y-6 rounded-3xl bg-neutral-100 p-6 text-left leading-relaxed text-neutral-600;
+    @apply w-full space-y-6 rounded-3xl bg-neutral-100 p-6 text-left leading-relaxed text-neutral-600 dark:bg-neutral-900 dark:text-neutral-300;
   }
 
   .article-content section {
@@ -40,11 +42,11 @@ body {
   }
 
   .article-content h2 {
-    @apply font-rounded text-xl font-bold text-neutral-900;
+    @apply font-rounded text-xl font-bold text-neutral-900 dark:text-neutral-100;
   }
 
   .article-content a {
-    @apply font-semibold text-neutral-900 underline underline-offset-3;
+    @apply font-semibold text-neutral-900 underline underline-offset-3 dark:text-neutral-100;
   }
 
   .article-content a:hover {
@@ -52,7 +54,7 @@ body {
   }
 
   .article-content strong {
-    @apply font-bold text-neutral-900;
+    @apply font-bold text-neutral-900 dark:text-neutral-100;
   }
 
   .article-content ul {

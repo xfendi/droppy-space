@@ -69,14 +69,14 @@ export default function FilterBar<T extends string>({
       role="group"
       aria-label={label}
       className={cn(
-        "group/filter relative flex gap-1 rounded-full bg-neutral-100 p-1",
+        "group/filter relative flex gap-1 rounded-full bg-neutral-100 dark:bg-neutral-900 p-1",
         className,
       )}
     >
       <span
         ref={pillRef}
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 rounded-full bg-white opacity-0 duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:data-[ready=true]:transition-[transform,width,height]"
+        className="pointer-events-none absolute left-0 top-0 rounded-full bg-white dark:bg-neutral-800 opacity-0 duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:data-[ready=true]:transition-[transform,width,height]"
       />
       {options.map((option) => (
         <button
@@ -86,10 +86,10 @@ export default function FilterBar<T extends string>({
           aria-pressed={value === option.value}
           onClick={() => onChange(option.value)}
           className={cn(
-            "relative z-10 cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-[color] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900",
+            "relative z-10 cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-[color] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 dark:focus-visible:outline-neutral-100",
             value === option.value
-              ? "bg-white text-neutral-900 group-data-[ready=true]/filter:bg-transparent"
-              : "text-neutral-500 hover:text-neutral-900",
+              ? "bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 group-data-[ready=true]/filter:bg-transparent dark:group-data-[ready=true]/filter:bg-transparent"
+              : "text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100",
           )}
         >
           {option.label}

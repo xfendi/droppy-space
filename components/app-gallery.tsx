@@ -78,10 +78,10 @@ export default function AppGallery() {
       <div className="min-h-64">
         {results.length === 0 ? (
           <div role="status"
-            className="flex min-h-64 flex-col items-center justify-center rounded-3xl bg-neutral-50 px-6 py-10 text-center [corner-shape:squircle]">
+            className="flex min-h-64 flex-col items-center justify-center rounded-3xl bg-neutral-50 dark:bg-neutral-900 px-6 py-10 text-center [corner-shape:squircle]">
             <HugeiconsIcon icon={Search01Icon} size={32} strokeWidth={2}
               aria-hidden="true" className="text-neutral-300 mb-3" />
-            <h2 className="text-xl font-rounded text-neutral-800">No icons found.</h2>
+            <h2 className="text-xl font-rounded text-neutral-800 dark:text-neutral-100">No icons found.</h2>
             <p className="max-w-sm text-sm text-neutral-500">
               {term ? `No matches for "${search.trim()}". Try another name or browse all icons.`
                 : "There are no icons in this category yet."}

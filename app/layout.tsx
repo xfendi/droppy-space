@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Nunito } from "next/font/google";
 import { CREATOR } from "@/data/site";
 import { LINKS } from "@/data/links";
+import ThemeProvider from "@/components/theme-provider";
 
 import "./globals.css";
 
@@ -33,9 +34,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${rounded.variable} h-full antialiased`}
     >
-      <body className="h-full w-full">{children}</body>
+      <body className="h-full w-full bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

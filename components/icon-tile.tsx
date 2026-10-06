@@ -21,7 +21,7 @@ export default function IconTile({ app }: IconTileProps) {
       className="group flex min-w-0 flex-col items-center gap-3 rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-900"
     >
       <span className="relative aspect-square w-full transition-transform motion-safe:group-hover:-translate-y-1 motion-safe:group-active:scale-95">
-        <span className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[30%] bg-neutral-100 ring-1 ring-black/5 [corner-shape:squircle]">
+        <span className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[30%] bg-neutral-100 dark:bg-neutral-900 ring-1 ring-black/5 dark:ring-white/10 [corner-shape:squircle]">
           {failed ? (
             <span
               className="text-4xl font-rounded text-neutral-400"
@@ -47,7 +47,7 @@ export default function IconTile({ app }: IconTileProps) {
         </span>
       </span>
       <span className="flex w-full min-w-0 flex-col gap-0.5 text-center">
-        <span className="truncate text-sm font-semibold text-neutral-900">
+        <span className="truncate text-sm font-semibold text-neutral-900 dark:text-neutral-100">
           {app.name}
         </span>
         <span className="text-xs text-neutral-400">

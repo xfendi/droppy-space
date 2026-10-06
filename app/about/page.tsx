@@ -80,7 +80,7 @@ export default function AboutPage() {
             </p>
           </section>
 
-          <section className="pt-6 border-t border-neutral-300">
+          <section className="pt-6 border-t border-neutral-300 dark:border-neutral-700">
             <p>
               All icons belong to their respective owners. Droppy is not
               affiliated with any of the apps or brands shown.

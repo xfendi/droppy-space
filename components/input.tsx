@@ -38,7 +38,7 @@ export function Input({
       <input
         id={inputId}
         className={cn(
-          "h-12 w-full rounded-3xl bg-neutral-100 px-4 text-base text-neutral-800 placeholder:text-neutral-400 [corner-shape:squircle] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-900 disabled:cursor-not-allowed disabled:opacity-50",
+          "h-12 w-full rounded-3xl bg-neutral-100 dark:bg-neutral-900 px-4 text-base text-neutral-800 dark:text-neutral-100 placeholder:text-neutral-400 [corner-shape:squircle] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-900 dark:focus-visible:outline-neutral-100 disabled:cursor-not-allowed disabled:opacity-50",
           icon && "pl-12",
           className,
         )}
