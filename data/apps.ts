@@ -8,6 +8,13 @@ export type App = {
 
 export const APPS: readonly App[] = [
   {
+    name: "Bencho",
+    slug: "bencho",
+    kind: "website",
+    icon_url: "https://r2.droppy.space/app-icons/bencho.jpg",
+    url: "https://bencho.dev/",
+  },
+  {
     name: "Kloff",
     slug: "kloff",
     kind: "website",
